@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Analysis Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Equipment Analysis Report</h1>
+
+<div class="stats">
+
+<div class="box">
+<h3>Total Equipment</h3>
+<p>{{ summary.total_equipment }}</p>
+</div>
+
+<div class="box">
+<h3>Average Flowrate</h3>
+<p>{{ summary.average_flowrate }}</p>
+</div>
+
+<div class="box">
+<h3>Average Pressure</h3>
+<p>{{ summary.average_pressure }}</p>
+</div>
+
+<div class="box">
+<h3>Max Temperature</h3>
+<p>{{ summary.max_temperature }}</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Equipment Type Distribution</h2>
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Count</th>
+</tr>
+
+{% for key, value in summary.equipment_type_distribution.items() %}
+
+<tr>
+<td>{{ key }}</td>
+<td>{{ value }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<div class="center">
+
+<a href="/" class="btn">
+Analyze Another File
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

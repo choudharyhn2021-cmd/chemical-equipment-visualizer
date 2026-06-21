@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Chemical Equipment Visualizer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Chemical Equipment Visualizer</h1>
+
+        <p>
+            Upload a CSV file containing equipment data
+            and generate analysis instantly.
+        </p>
+
+        <form action="/analyze"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <input
+                type="file"
+                name="file"
+                accept=".csv"
+                required>
+
+            <button type="submit">
+                Analyze Data
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
